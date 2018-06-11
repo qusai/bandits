@@ -20,8 +20,7 @@ class IndexPage extends Component {
 
 	componentWillMount() {
 		const apiEndpoint = 'https://bandits.cdn.prismic.io/api/v2'
-		const accessToken =
-			'MC5XeDNibENRQUFEWXVOTFcz.CQMB77-977-9a0vvv70tCCfvv706HHPvv73vv73vv70477-977-9OC1B77-977-9R--_ve-_vXcb77-9'
+		const accessToken = process.env.GATSBY_PRISMIC_ACCESS_TOKEN
 		Prismic.api(apiEndpoint, { accessToken }).then(api => {
 			api
 				.query(Prismic.Predicates.at('document.type', 'wedding'))
