@@ -9,17 +9,15 @@ class IndexPage extends Component {
 	}
 
 	linkResolver = doc => {
-		if (doc.type == 'page') {
-			return '/page/' + doc.uid
-		} else if (doc.type == 'blog_post') {
-			return '/blog/' + doc.uid
+		if (doc.type == 'repeatable') {
+			return '/wedding/' + doc.uid
 		}
 		// Default to homepage
 		return '/'
 	}
 
 	componentWillMount() {
-		const apiEndpoint = 'https://bandits.cdn.prismic.io/api/v2'
+		const apiEndpoint = process.env.GATSBY_PRISMIC_ENDPOINT
 		const accessToken = process.env.GATSBY_PRISMIC_ACCESS_TOKEN
 		Prismic.api(apiEndpoint, { accessToken }).then(api => {
 			api
