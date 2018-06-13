@@ -3,13 +3,11 @@ import Link from 'gatsby-link'
 import styles from './header.module.scss'
 
 const Header = ({ siteTitle }) => (
-  <div className={styles.header}>
-    <div>
-      <h1>
-        <Link to="/">{siteTitle}</Link>
-      </h1>
-    </div>
-  </div>
+	<header className={styles.header}>
+		<h1>
+			<Link to="/">Bandits</Link>
+		</h1>
+	</header>
 )
 
 export default Header
