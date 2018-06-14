@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import Link from 'gatsby-link'
+import Header from '../components/Header'
 import Prismic from 'prismic-javascript'
 import { RichText, Date } from 'prismic-reactjs'
-import Header from '../components/Header/'
 
 class IndexPage extends Component {
 	state = {
@@ -32,7 +32,11 @@ class IndexPage extends Component {
 	}
 
 	render() {
-		return <Header />
+		if (this.state.doc) {
+			const document = this.state.doc.data
+			return <Header />
+		}
+		return <h1>loading...</h1>
 	}
 }
 
