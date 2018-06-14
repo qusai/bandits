@@ -12,8 +12,8 @@
 	margin: 0;
 	text-align: center;
 
-	transition: 0.1s;
-	will-change: font-size;
+	transition: 0.01s;
+	will-change: transform, top;
 
 	position: fixed;
 }
