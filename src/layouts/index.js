@@ -2,38 +2,12 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 
-import Header from '../components/header'
+import './global.scss'
 
-const Layout = ({ children, data }) => (
-  <div>
-    <Helmet
-      title={data.site.siteMetadata.title}
-      meta={[
-        {
-          name: 'description',
-          content: 'Bandits is a wedding photography collective.',
-        },
-        { name: 'keywords', content: 'bandits, wedding, photography' },
-      ]}
-    />
-
-    <Header siteTitle={data.site.siteMetadata.title} />
-    <section>{children()}</section>
-  </div>
-)
+const Layout = ({ children, data }) => <section>{children()}</section>
 
 Layout.propTypes = {
   children: PropTypes.func,
 }
 
 export default Layout
-
-export const query = graphql`
-  query SiteTitleQuery {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-  }
-`
