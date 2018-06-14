@@ -1,12 +1,14 @@
 import React, { Component } from 'react'
 import Link from 'gatsby-link'
 import Header from '../components/Header'
+import Body from '../components/Body'
 import Prismic from 'prismic-javascript'
 import { RichText, Date } from 'prismic-reactjs'
 
 class IndexPage extends Component {
 	state = {
 		doc: null,
+		scrollTop: '',
 	}
 
 	linkResolver = doc => {
@@ -31,10 +33,25 @@ class IndexPage extends Component {
 		})
 	}
 
+	componentDidMount() {
+		window.addEventListener('scroll', this.handleScroll)
+	}
+
+	handleScroll = event => {
+		let scrollTop = window.scrollY
+		this.setState({ scrollTop: scrollTop })
+	}
+
 	render() {
 		if (this.state.doc) {
-			const document = this.state.doc.data
-			return <Header />
+			const { doc, scrollTop } = this.state
+			const document = doc.data
+			return (
+				<section ref="body">
+					<Header scrollTop={scrollTop} />
+					<Body />
+				</section>
+			)
 		}
 		return <h1>loading...</h1>
 	}

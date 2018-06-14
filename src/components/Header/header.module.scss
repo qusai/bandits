@@ -11,6 +11,11 @@
 .site_name {
 	margin: 0;
 	text-align: center;
+
+	transition: 0.1s;
+	will-change: font-size;
+
+	position: fixed;
 }
 
 .site_name_link {
