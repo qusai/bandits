@@ -10,7 +10,7 @@ class Header extends Component {
 		const scroll = scrollTop * 0.1 // adjust speed
 		const position = scroll > maxPosition ? maxPosition : scroll
 		const elementPosition = maxPosition - position
-		const fontSize = elementPosition + 16 // set minimum font-size
+		const fontSize = elementPosition + 20 // set minimum font-size
 
 		// Styles to animate the position
 		const nameStyle = {
