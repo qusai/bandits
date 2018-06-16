@@ -12,7 +12,7 @@
   margin: $spacing-base 0;
   position: fixed;
   text-align: center;
-  transition: 0.01s;
+  transition: 0.01s transform;
   will-change: transform, top;
   z-index: 1;
 }
@@ -20,7 +20,9 @@
 .site_name_link {
   font-size: 15vw;
   letter-spacing: 0px;
+  line-height: 0;
   text-decoration: none;
+  transition: 0.01s;
 
   &:hover {
     color: $color-dark;
