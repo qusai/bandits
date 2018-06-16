@@ -4,17 +4,20 @@ import header1 from './header-1.jpg'
 import header2 from './header-2.jpg'
 
 export default class HeaderImages extends Component {
-	render() {
-		return (
-			<div className={styles.header_images}>
-				<div className={styles.header_image}>
-					<img src={header1} alt="" />
-				</div>
+  render() {
+    const { doc } = this.props
 
-				<div className={styles.header_image}>
-					<img src={header2} alt="" />
-				</div>
-			</div>
-		)
-	}
+    if (doc) {
+      const header_images = doc.header_images.map((image, index) => {
+        return (
+          <div className={styles.header_image} key={index}>
+            <img src={image.header_image.url} alt="" />
+          </div>
+        )
+      })
+      return <div className={styles.header_images}>{header_images}</div>
+    } else {
+      return null
+    }
+  }
 }

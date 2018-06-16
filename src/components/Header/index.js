@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
 import Link from 'gatsby-link'
+import Prismic from 'prismic-javascript'
 import HeaderImages from './HeaderImages'
 import styles from './header.module.scss'
 
 class Header extends Component {
 	render() {
 		let { scrollTop } = this.props
+		const { doc } = this.props
 
 		const maxPosition = 50
 		const scroll = scrollTop * 0.1 // adjust speed
@@ -35,7 +37,7 @@ class Header extends Component {
 						Bandits
 					</Link>
 				</h1>
-				<HeaderImages />
+				<HeaderImages doc={doc} />
 			</header>
 		)
 	}
