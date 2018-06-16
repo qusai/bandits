@@ -3,7 +3,7 @@
 .header {
 	align-items: center;
 	display: flex;
-	height: 100vh;
+	height: 150vh;
 	justify-content: center;
 	width: 100%;
 }
@@ -14,6 +14,7 @@
 	text-align: center;
 	transition: 0.01s;
 	will-change: transform, top;
+	z-index: 1;
 }
 
 .site_name_link {

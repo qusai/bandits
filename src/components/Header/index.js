@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Link from 'gatsby-link'
+import HeaderImages from './HeaderImages'
 import styles from './header.module.scss'
 
 class Header extends Component {
@@ -34,6 +35,7 @@ class Header extends Component {
 						Bandits
 					</Link>
 				</h1>
+				<HeaderImages />
 			</header>
 		)
 	}
