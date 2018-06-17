@@ -19,8 +19,10 @@
 
 .site_tagline {
   color: $color-base;
+  display: block;
   font-family: $sans;
   font-weight: normal;
+  pointer-events: none;
   text-transform: lowercase;
   will-change: opacity;
 }
@@ -31,8 +33,4 @@
   line-height: 0;
   text-decoration: none;
   transition: 0.01s;
-
-  &:hover {
-    color: $color-dark;
-  }
 }
