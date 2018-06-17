@@ -4,10 +4,8 @@ import Prismic from 'prismic-javascript'
 import HeaderImages from './HeaderImages'
 import styles from './header.module.scss'
 
-class Header extends Component {
-  render() {
-    let { scrollTop } = this.props
-    const { doc } = this.props
+const Header = props => {
+    const { doc, scrollTop } = props
 
     const maxPosition = 50
     const scroll = scrollTop * 0.1 // adjust speed
@@ -45,7 +43,6 @@ class Header extends Component {
         <HeaderImages doc={doc} />
       </header>
     )
-  }
 }
 
 export default Header

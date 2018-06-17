@@ -2,9 +2,8 @@ import React, { Component } from 'react'
 import styles from './header-image.module.scss'
 import ResponsiveImage from '../ResponsiveImage'
 
-export default class HeaderImages extends Component {
-  render() {
-    const { doc } = this.props
+const HeaderImages = props => {
+    const { doc } = props
 
     if (doc) {
       const header_images = doc.header_images.map((image, index) => {
@@ -18,5 +17,6 @@ export default class HeaderImages extends Component {
     } else {
       return null
     }
-  }
 }
+
+export default HeaderImages
