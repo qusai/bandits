@@ -9,12 +9,20 @@
 }
 
 .site_name {
-  margin: $spacing-base 0;
+  margin: 0;
   position: fixed;
   text-align: center;
   transition: 0.01s transform;
   will-change: transform, top;
   z-index: 1;
+}
+
+.site_tagline {
+  color: $color-base;
+  font-family: $sans;
+  font-weight: normal;
+  text-transform: lowercase;
+  will-change: opacity;
 }
 
 .site_name_link {
