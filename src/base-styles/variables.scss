@@ -1,9 +1,21 @@
+// Ratio
+$ratio: 1.1618;
+
+// Fonts
+$serif: 'Cormorant', serif;
+$sans: Arial, sans-serif;
+
 // Colors
 $color-base: #ffe5df;
 $color-dark: #466060;
 
 // Spacing
 $spacing-base: 1rem;
+$spacing-md: $spacing-base * $ratio;
+$spacing-lg: $spacing-md * $ratio;
+$spacing-xl: $spacing-lg * $ratio;
+$spacing-xxl: $spacing-xl * $ratio;
+$spacing-xxxl: $spacing-xxl * $ratio * 2;
 
 // Breakpoints
 $mobile: 320px;

@@ -1,17 +1,15 @@
 import React, { Component } from 'react'
 import styles from './header-image.module.scss'
-import header1 from './header-1.jpg'
-import header2 from './header-2.jpg'
+import ResponsiveImage from '../ResponsiveImage'
 
-export default class HeaderImages extends Component {
-  render() {
-    const { doc } = this.props
+const HeaderImages = props => {
+    const { doc } = props
 
     if (doc) {
       const header_images = doc.header_images.map((image, index) => {
         return (
           <div className={styles.header_image} key={index}>
-            <img src={image.header_image.url} alt="" />
+            <ResponsiveImage image={image.header_image} />
           </div>
         )
       })
@@ -19,5 +17,6 @@ export default class HeaderImages extends Component {
     } else {
       return null
     }
-  }
 }
+
+export default HeaderImages

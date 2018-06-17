@@ -9,20 +9,28 @@
 }
 
 .site_name {
-  margin: $spacing-base 0;
+  margin: 0;
   position: fixed;
   text-align: center;
-  transition: 0.01s;
+  transition: 0.01s transform;
   will-change: transform, top;
   z-index: 1;
+}
+
+.site_tagline {
+  color: $color-base;
+  display: block;
+  font-family: $sans;
+  font-weight: normal;
+  pointer-events: none;
+  text-transform: lowercase;
+  will-change: opacity;
 }
 
 .site_name_link {
   font-size: 15vw;
   letter-spacing: 0px;
+  line-height: 0;
   text-decoration: none;
-
-  &:hover {
-    color: $color-dark;
-  }
+  transition: 0.01s;
 }
