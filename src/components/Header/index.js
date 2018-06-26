@@ -4,15 +4,13 @@ import Prismic from 'prismic-javascript'
 import HeaderImages from './HeaderImages'
 import styles from './header.module.scss'
 
-const Header = props => {
-    const { doc, scrollTop } = props
+const Header = ({ doc, scrollTop }) => {
 
     const maxPosition = 50
     const scroll = scrollTop * 0.1 // adjust speed
     const position = scroll > maxPosition ? maxPosition : scroll
     const elementPosition = maxPosition - position
     const fontSize = elementPosition + 20 // set minimum font-size
-    const taglineOpacity = position * 2 / 100
 
     // Styles to animate the position
     const nameStyle = {
@@ -27,7 +25,7 @@ const Header = props => {
 
     // Styles to animate tagline
     const taglineStyle = {
-      opacity: taglineOpacity,
+      opacity: position * 2 / 100,
     }
 
     return (
