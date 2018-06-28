@@ -27,10 +27,13 @@ class Body extends Component {
 
     return (
       <div>
-        {weddings.length &&
+        {weddings.length ? (
           weddings.map((wedding, index) => {
             return <Wedding doc={wedding} key={index} />
-          })}
+          })
+        ) : (
+          <h1>...</h1>
+        )}
       </div>
     )
   }
