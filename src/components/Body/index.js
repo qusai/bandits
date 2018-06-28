@@ -26,13 +26,13 @@ class Body extends Component {
     const { weddings } = this.state
 
     return (
-      <div>
+      <div className={styles.body}>
         {weddings.length ? (
           weddings.map((wedding, index) => {
             return <Wedding doc={wedding} key={index} />
           })
         ) : (
-          <h1>...</h1>
+          <h1>♣</h1>
         )}
       </div>
     )
