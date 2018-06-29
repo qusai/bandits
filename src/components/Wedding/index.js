@@ -15,11 +15,11 @@ const Wedding = ({ doc }) => {
       })
       // Create an element to show images from the layout
       return (
-        <div className={styles.cols_2} key={index}>
-          <div className={styles.scroll}>{scrollPhoto}</div>
+        <div className={styles.cols_2_scroll_1_fixed} key={index}>
+          <div className={styles.col_scroll}>{scrollPhoto}</div>
 
           {slice.primary && (
-            <div className={styles.fixed}>
+            <div className={styles.col_fixed}>
               <ResponsiveImage image={fixedPhoto} />
             </div>
           )}
@@ -28,7 +28,7 @@ const Wedding = ({ doc }) => {
     }
   })
 
-  // Conditional to show only markup if there's content
+  // Conditional to show markup only if there's content
   if (doc.data.body.length) {
     return <section className={styles.wedding}>{wedding}</section>
   } else {

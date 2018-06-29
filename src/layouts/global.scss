@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css?family=Cormorant:400,700');
+@import '../base-styles/fonts';
 @import '../base-styles/variables';
 
 body {
   -webkit-font-smoothing: antialiased;
   background-color: $color-dark;
-  font-family: 'Cormorant', sans-serif;
+  font-family: 'Relative', sans-serif;
   margin: 0;
 }
 
