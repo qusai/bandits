@@ -49,7 +49,7 @@ class Header extends Component {
 
     // Styles to animate the font-size
     const linkStyle = {
-      fontSize: fontSize / 3 + 'vw',
+      fontSize: fontSize / 3 + 'vmin',
     }
 
     // Styles to animate tagline
