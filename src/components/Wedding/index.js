@@ -14,11 +14,7 @@ const Wedding = ({ doc }) => {
   })
 
   // Conditional to show markup only if there's content
-  return (
-    <section className={styles.wedding}>
-      {doc.data.wedding_photos.length && wedding}
-    </section>
-  )
+  return <section className={styles.wedding}>{wedding}</section>
 }
 
 export default Wedding
