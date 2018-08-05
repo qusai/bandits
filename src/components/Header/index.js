@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import ReactDOM from 'react-dom'
 import Link from 'gatsby-link'
 import Prismic from 'prismic-javascript'
 import { apiEndpoint, accessToken } from '../../prismic'
@@ -49,7 +50,7 @@ class Header extends Component {
 
     // Styles to animate the font-size
     const linkStyle = {
-      fontSize: fontSize / 3 + 'vmin',
+      fontSize: fontSize / 15 + 'em',
     }
 
     // Styles to animate tagline

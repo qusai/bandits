@@ -3,7 +3,14 @@ $ratio: 1.1618;
 
 // Fonts
 $serif: 'Berlingske', serif;
-$sans: sans-serif;
+$sans: 'GT America', sans-serif;
+
+// Font sizes
+$fs-base: 1rem;
+$fs-md: $fs-base * $ratio;
+$fs-lg: $fs-md * $ratio;
+$fs-sm: $fs-base / $ratio;
+$fs-xs: $fs-sm / $ratio;
 
 // Colors
 $color-base: #ffe5df;
@@ -11,6 +18,9 @@ $color-dark: #466060;
 
 // Spacing
 $spacing-base: 1rem;
+$spacing-sm: $spacing-base / $ratio;
+$spacing-xs: $spacing-sm / 2 / $ratio;
+$spacing-xxs: $spacing-xs / $ratio;
 $spacing-md: $spacing-base * $ratio;
 $spacing-lg: $spacing-md * $ratio;
 $spacing-xl: $spacing-lg * $ratio;
@@ -25,3 +35,7 @@ $tablet: 768px;
 $desktop: 1024px;
 $desktop-lg: 1440px;
 $desktop-xl: 1920px;
+
+// Letter spacing
+$ls-loose: calc(#{$ratio}/ 4rem);
+$ls-x-loose: calc(#{$ratio}/ 2rem);
