@@ -4,7 +4,6 @@ import ResponsiveImage from '../ResponsiveImage'
 
 const Wedding = ({ doc }) => {
   // Get layouts
-  console.log(doc.data)
 
   const wedding = doc.data.wedding_photos.map((photo, index) => {
     return (
@@ -15,11 +14,11 @@ const Wedding = ({ doc }) => {
   })
 
   // Conditional to show markup only if there's content
-  if (doc.data.body.length) {
-    return <section className={styles.wedding}>{wedding}</section>
-  } else {
-    return null
-  }
+  return (
+    <section className={styles.wedding}>
+      {doc.data.wedding_photos.length && wedding}
+    </section>
+  )
 }
 
 export default Wedding
