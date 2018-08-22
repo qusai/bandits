@@ -1,4 +1,6 @@
 @import '../../base-styles/variables';
+@import '../../base-styles/mixins';
+@import '../../base-styles/placeholders';
 
 .header {
   align-items: center;
@@ -10,28 +12,44 @@
 
 .site_name {
   font-family: $serif;
+  font-size: $fs-base;
   margin: 0;
   position: fixed;
   text-align: center;
   transition: 0.01s transform;
   will-change: transform, top;
   z-index: 10;
+
+  @include respond-to($tablet) {
+    font-size: $fs-lg * 1.5;
+  }
+
+  @include respond-to($desktop-lg) {
+    font-size: $fs-lg * 2;
+  }
 }
 
 .site_tagline {
+  @extend %uppercase;
   color: $color-base;
   display: block;
   font-family: $sans;
   font-weight: normal;
+  font-size: $fs-xs;
   pointer-events: none;
-  text-transform: lowercase;
   will-change: opacity;
 }
 
 .site_name_link {
+  @extend %uppercase;
   font-size: 15vw;
-  letter-spacing: 0px;
-  line-height: 0;
+  font-weight: normal;
+  margin: $spacing-xs 0 $spacing-xxs;
+  display: block;
   text-decoration: none;
   transition: 0.01s;
+
+  @include respond-to($tablet) {
+    margin: 0;
+  }
 }

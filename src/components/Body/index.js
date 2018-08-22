@@ -24,15 +24,14 @@ class Body extends Component {
 
   render() {
     const { weddings } = this.state
+    const wedding = weddings.map((wedding, index) => {
+      console.log(wedding.data.wedding_photos)
+      return wedding.data.wedding_photos.length ? (
+        <Wedding doc={wedding} key={index} />
+      ) : null
+    })
 
-    return (
-      <div className={styles.body}>
-        {weddings.length &&
-          weddings.map((wedding, index) => {
-            return <Wedding doc={wedding} key={index} />
-          })}
-      </div>
-    )
+    return <div className={styles.body}>{wedding}</div>
   }
 }
 

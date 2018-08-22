@@ -2,35 +2,11 @@
  *  WebFont Package Licensed to Qusai Akoud
  */
 
-/* Morion Regular */
+/* Berlingske */
 @font-face {
-  font-family: Morion;
-  src: url('/fonts/Morion-Regular.woff') format('woff'),
-    url('/fonts/Morion-Regular.eot') format('eot');
-  font-weight: 400;
-  font-style: normal;
-}
-
-/* Morion Bold */
-@font-face {
-  font-family: Morion;
-  src: url('/fonts/Morion-Bold.woff') format('woff'), url('/fonts/Morion-Bold.eot') format('eot');
-  font-weight: 700;
-  font-style: normal;
-}
-
-/* Relative Book */
-@font-face {
-  font-family: Relative;
-  src: url('/fonts/Relative-Book.woff') format('woff');
-  font-weight: 300;
-  font-style: normal;
-}
-
-/* Relative Bold */
-@font-face {
-  font-family: RelativeBold;
-  src: url('/fonts/Relative-Bold.woff') format('woff');
-  font-weight: 300;
+  font-family: Berlingske;
+  src: url('/fonts/BerlingskeSerifDisplay-Extralight.otf') format('otf'),
+    url('/fonts/BerlingskeSerifDisplay-Extralight.woff') format('woff');
+  font-weight: normal;
   font-style: normal;
 }
