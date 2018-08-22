@@ -10,7 +10,7 @@ class Header extends Component {
   state = {
     doc: null,
     scrollTop: null,
-    windowWidth: window.innerWidth,
+    windowWidth: null,
   }
 
   componentWillMount() {
@@ -28,6 +28,9 @@ class Header extends Component {
 
   componentDidMount() {
     window.addEventListener('scroll', this.handleScroll)
+    this.setState({
+      windowWidth: window.innerWidth,
+    })
   }
 
   handleScroll = event => {
