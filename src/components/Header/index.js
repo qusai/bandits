@@ -36,13 +36,17 @@ class Header extends Component {
 
   render() {
     const { scrollTop, doc } = this.state
+    const breakPoint = 768
     const maxPosition = 50
-    const scroll = scrollTop * 0.1 // adjust speed
+    const scroll = scrollTop * 0.1 // Adjust speed
     const position = scroll > maxPosition ? maxPosition : scroll
     const elementPosition = maxPosition - position
-    const fontSize = elementPosition + 20 // set minimum font-size
+    const fontSize =
+      (window.innerWidth >= breakPoint
+        ? elementPosition
+        : elementPosition * 0.15) + 20 // Set minimum font-size
 
-    // Styles to animate the position
+    // Styles to animate the position of the site name
     const nameStyle = {
       transform: 'translateY(-' + elementPosition + '%)',
       top: elementPosition + '%',
@@ -50,12 +54,12 @@ class Header extends Component {
 
     // Styles to animate the font-size
     const linkStyle = {
-      fontSize: fontSize / 15 + 'em',
+      fontSize: fontSize / (window.innerWidth >= breakPoint ? 15 : 6) + 'em',
     }
 
     // Styles to animate tagline
     const taglineStyle = {
-      opacity: position * 2 / 100,
+      opacity: (position * 2) / 100,
     }
 
     if (doc) {
