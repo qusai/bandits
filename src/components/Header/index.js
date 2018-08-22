@@ -10,6 +10,7 @@ class Header extends Component {
   state = {
     doc: null,
     scrollTop: null,
+    windowWidth: null,
   }
 
   componentWillMount() {
@@ -27,6 +28,9 @@ class Header extends Component {
 
   componentDidMount() {
     window.addEventListener('scroll', this.handleScroll)
+    this.setState({
+      windowWidth: window.innerWidth,
+    })
   }
 
   handleScroll = event => {
@@ -35,16 +39,15 @@ class Header extends Component {
   }
 
   render() {
-    const { scrollTop, doc } = this.state
+    const { scrollTop, doc, windowWidth } = this.state
     const breakPoint = 768
     const maxPosition = 50
     const scroll = scrollTop * 0.1 // Adjust speed
     const position = scroll > maxPosition ? maxPosition : scroll
     const elementPosition = maxPosition - position
     const fontSize =
-      (window.innerWidth >= breakPoint
-        ? elementPosition
-        : elementPosition * 0.15) + 20 // Set minimum font-size
+      (windowWidth >= breakPoint ? elementPosition : elementPosition * 0.15) +
+      20 // Set minimum font-size
 
     // Styles to animate the position of the site name
     const nameStyle = {
@@ -54,7 +57,7 @@ class Header extends Component {
 
     // Styles to animate the font-size
     const linkStyle = {
-      fontSize: fontSize / (window.innerWidth >= breakPoint ? 15 : 6) + 'em',
+      fontSize: fontSize / (windowWidth >= breakPoint ? 13 : 6) + 'em',
     }
 
     // Styles to animate tagline

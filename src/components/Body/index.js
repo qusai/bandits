@@ -25,7 +25,6 @@ class Body extends Component {
   render() {
     const { weddings } = this.state
     const wedding = weddings.map((wedding, index) => {
-      console.log(wedding.data.wedding_photos)
       return wedding.data.wedding_photos.length ? (
         <Wedding doc={wedding} key={index} />
       ) : null
