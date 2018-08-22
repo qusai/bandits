@@ -16,7 +16,7 @@
   margin: 0;
   position: fixed;
   text-align: center;
-  transition: 0.01s;
+  transition: 0.001s transform;
   will-change: transform, top;
   z-index: 10;
 
