@@ -17,10 +17,12 @@
 
 .header_image {
   @include size(100%, 50%);
+  transition: 0.3s;
 
   picture {
-    display: block;
     @include size(100%);
+    display: block;
+    transition: 0.3s;
 
     @include respond-to($tablet) {
       @include size(100%);
@@ -29,6 +31,7 @@
     img {
       @include size(100%);
       display: block;
+      transition: 0.3s;
       object-fit: cover;
       object-position: top center;
 
