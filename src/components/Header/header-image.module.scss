@@ -3,6 +3,7 @@
 
 .header_images {
   @include size(100%);
+  justify-content: flex-end;
   display: flex;
   flex-direction: column;
   position: fixed;
@@ -11,6 +12,7 @@
 
   @include respond-to($tablet) {
     @include size(100%);
+    align-items: flex-end;
     flex-direction: row-reverse;
   }
 }
@@ -18,12 +20,6 @@
 .header_image {
   @include size(100%, 50%);
   z-index: 1;
-
-  &:last-child {
-    position: fixed;
-    top: 50%;
-    z-index: 0;
-  }
 
   picture {
     @include size(100%);
@@ -37,7 +33,6 @@
       @include size(100%);
       display: block;
       object-fit: cover;
-      object-position: top center;
 
       @include respond-to($tablet) {
         @include size(100%);

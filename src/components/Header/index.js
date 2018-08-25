@@ -28,14 +28,19 @@ class Header extends Component {
 
   componentDidMount() {
     window.addEventListener('scroll', this.handleScroll)
+    window.addEventListener('resize', this.handleResize)
     this.setState({
       windowWidth: window.innerWidth,
     })
   }
 
-  handleScroll = event => {
+  handleScroll = () => {
     let scrollTop = window.scrollY
     this.setState({ scrollTop: scrollTop })
+  }
+
+  handleResize = () => {
+    this.setState({ windowWidth: window.innerWidth })
   }
 
   render() {
@@ -47,7 +52,7 @@ class Header extends Component {
     const elementPosition = maxPosition - position
     const fontSize =
       (windowWidth >= breakPoint ? elementPosition : elementPosition * 0.15) +
-      20 // Set minimum font-size
+      20 // Set minimum font-size: 20
 
     // Styles to animate the position of the site name
     const nameStyle = {
