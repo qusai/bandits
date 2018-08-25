@@ -3,10 +3,12 @@
 @import '../../base-styles/placeholders';
 
 .header {
+  -webkit-overflow-scrolling: touch;
   align-items: center;
   display: flex;
-  height: 150vh;
   justify-content: center;
+  position: relative;
+  scroll-behavior: smooth;
   width: 100%;
 }
 
@@ -16,7 +18,6 @@
   margin: 0;
   position: fixed;
   text-align: center;
-  transition: 0.01s transform;
   will-change: transform, top;
   z-index: 10;
 
@@ -47,7 +48,6 @@
   margin: $spacing-xs 0 $spacing-xxs;
   display: block;
   text-decoration: none;
-  transition: 0.01s;
 
   @include respond-to($tablet) {
     margin: 0;

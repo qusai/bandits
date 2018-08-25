@@ -3,6 +3,7 @@
 
 .header_images {
   @include size(100%);
+  justify-content: flex-end;
   display: flex;
   flex-direction: column;
   position: fixed;
@@ -11,21 +12,18 @@
 
   @include respond-to($tablet) {
     @include size(100%);
+    align-items: flex-end;
     flex-direction: row-reverse;
   }
 }
 
 .header_image {
   @include size(100%, 50%);
-
-  @include respond-to($tablet) {
-    max-height: 100vh;
-    max-width: 100vw;
-  }
+  z-index: 1;
 
   picture {
+    @include size(100%);
     display: block;
-    @include size(100%, 50vh);
 
     @include respond-to($tablet) {
       @include size(100%);
@@ -35,10 +33,9 @@
       @include size(100%);
       display: block;
       object-fit: cover;
-      object-position: top center;
 
       @include respond-to($tablet) {
-        @include size(100%, 100vh);
+        @include size(100%);
       }
     }
   }
