@@ -16,8 +16,10 @@
   font-family: $serif;
   font-size: $fs-base;
   margin: 0;
+  padding-bottom: $spacing-sm;
   position: fixed;
   text-align: center;
+  width: 100%;
   will-change: transform, top;
   z-index: 10;
 
