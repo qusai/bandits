@@ -27,11 +27,16 @@ class Header extends Component {
   }
 
   componentDidMount() {
-    window.addEventListener('scroll', this.handleScroll)
-    window.addEventListener('resize', this.handleResize)
+    const { headerLoaded } = this.props
+
+    headerLoaded()
+
     this.setState({
       windowWidth: window.innerWidth,
     })
+
+    window.addEventListener('scroll', this.handleScroll)
+    window.addEventListener('resize', this.handleResize)
   }
 
   handleScroll = () => {
@@ -44,11 +49,13 @@ class Header extends Component {
   }
 
   render() {
-    const { scrollTop, doc, windowWidth } = this.state
+    const { scrollTop, doc, windowWidth, imagesLoaded } = this.state
+
     const breakPoint = 768
     const maxPosition = 50
     const scroll = scrollTop * 0.1 // Adjust speed
     const position = scroll > maxPosition ? maxPosition : scroll
+    const opacity = Math.round((position - maxPosition / 2) * 100) / 100
     const elementPosition = maxPosition - position
     const fontSize =
       (windowWidth >= breakPoint ? elementPosition : elementPosition * 0.15) +
@@ -58,6 +65,7 @@ class Header extends Component {
     const nameStyle = {
       transform: 'translateY(-' + elementPosition + '%)',
       top: elementPosition + '%',
+      backgroundColor: 'rgba(70, 96, 96, ' + (opacity / 100) * 4 + ')',
     }
 
     // Styles to animate the font-size
@@ -68,6 +76,10 @@ class Header extends Component {
     // Styles to animate tagline
     const taglineStyle = {
       opacity: (position * 2) / 100,
+    }
+
+    const headerStyles = {
+      opacity: (opacity / 100) * 4,
     }
 
     if (doc) {
@@ -85,7 +97,7 @@ class Header extends Component {
         </header>
       )
     }
-    return <h1>Loading...</h1>
+    return null
   }
 }
 
