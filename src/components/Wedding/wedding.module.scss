@@ -1,50 +1,77 @@
 @import '../../base-styles/variables';
 @import '../../base-styles/mixins';
+@import '../../base-styles/placeholders';
 
 .wedding {
   background-color: $color-dark;
+  display: grid;
+  grid-template-column: 1fr;
+  position: relative;
+
+  &:not(:first-child) {
+    .wedding_header {
+      margin-top: 75%;
+    }
+
+    .wedding_name:before {
+      height: 300%;
+    }
+  }
+}
+
+.wedding_header {
+  justify-content: center;
+  display: flex;
   position: relative;
 }
 
-.cols_2_scroll_1_fixed {
-  @include respond-to($desktop-lg) {
-    display: grid;
-    grid-template-rows: 100vh;
-    grid-template-columns: 1fr 1fr;
+.wedding_name {
+  @extend %uppercase;
+  align-items: center;
+  color: $color-base;
+  display: flex;
+  font-family: $serif;
+  font-size: 8vmin;
+  font-weight: 100;
+  justify-content: center;
+  margin: 25% $spacing-sm;
+  padding: $spacing-lg;
+  position: relative;
+  text-align: center;
+  z-index: 1;
+
+  &:before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    width: 1px;
+    height: 150%;
+    bottom: 100%;
+    background-color: $color-base;
+  }
+
+  @include respond-to($tablet) {
+    font-size: 12vmin;
+    margin: 25% $spacing-lg;
+    padding: $spacing-lg $spacing-xxxl;
   }
 }
 
-.col_scroll {
-  grid-row: span 2;
-
-  picture {
-    display: block;
-    padding: $spacing-base;
-  }
-}
-
-.col_fixed {
-  padding: $spacing-md;
-
-  picture {
-    height: 100%;
-    display: block;
-  }
+.wedding_header_image {
+  position: absolute;
+  top: 50%;
+  height: 50%;
 
   img {
-    object-fit: contain;
-    object-position: bottom;
-    height: 100%;
+    @include size(100%);
+    object-fit: cover;
   }
+}
 
-  @include respond-to($desktop-lg) {
-    padding: $spacing-xxl;
-    position: sticky;
-    top: 0;
+.wedding_image {
+  padding: $spacing-sm $spacing-sm 0 $spacing-sm;
 
-    picture {
-      width: calc(100% / #{$ratio});
-      height: calc(100% / #{$ratio});
-    }
+  @include respond-to($tablet) {
+    padding: $spacing-lg $spacing-lg 0 $spacing-lg;
   }
 }
