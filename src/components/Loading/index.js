@@ -2,19 +2,17 @@ import React, { Component } from 'react'
 import styles from './loading.module.scss'
 
 const Loading = () => {
-  console.log('loading..')
-
   const inlineLoadingStyles = {
-    backgroundColor: '#466060',
-    fontFamily: 'GT America',
     alignItems: 'center',
+    backgroundColor: '#466060',
     display: 'flex',
+    fontFamily: 'GT America',
+    height: '100vh',
     justifyContent: 'center',
     left: 0,
     position: 'fixed',
     top: 0,
     width: '100vw',
-    height: '100vh',
     zIndex: '100000',
   }
 
