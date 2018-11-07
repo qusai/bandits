@@ -15,14 +15,11 @@ const Wedding = ({ doc }) => {
   return (
     <section className={styles.wedding}>
       <div className={styles.wedding_header}>
-        <h2 className={styles.wedding_name}>{doc.data.wedding_name[0].text}</h2>
-        {doc.data.wedding_header_image ? (
-          <div className={styles.wedding_header_image}>
-            <ResponsiveImage image={doc.data.wedding_header_image} />
-          </div>
-        ) : (
-          ''
-        )}
+        <h2 className={styles.wedding_name}>
+          <span className={styles.wedding_name_text}>
+            {doc.data.wedding_name[0].text}
+          </span>
+        </h2>
       </div>
       {wedding}
     </section>

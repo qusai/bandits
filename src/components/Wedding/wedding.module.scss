@@ -5,24 +5,17 @@
 .wedding {
   background-color: $color-dark;
   display: grid;
-  grid-template-column: 1fr;
+  padding-top: 50vmin;
   position: relative;
-
-  &:not(:first-child) {
-    .wedding_header {
-      margin-top: 75%;
-    }
-
-    .wedding_name:before {
-      height: 300%;
-    }
-  }
 }
 
 .wedding_header {
-  justify-content: center;
   display: flex;
-  position: relative;
+  justify-content: center;
+  position: sticky;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
 }
 
 .wedding_name {
@@ -34,44 +27,46 @@
   font-size: 8vmin;
   font-weight: 100;
   justify-content: center;
-  margin: 25% $spacing-sm;
-  padding: $spacing-lg;
-  position: relative;
+  margin: 0;
   text-align: center;
+  position: relative;
   z-index: 1;
-
-  &:before {
-    content: '';
-    position: absolute;
-    left: 50%;
-    width: 1px;
-    height: 150%;
-    bottom: 100%;
-    background-color: $color-base;
-  }
 
   @include respond-to($tablet) {
     font-size: 12vmin;
-    margin: 25% $spacing-lg;
+  }
+}
+
+.wedding_name_text {
+  line-height: 1;
+  padding: $spacing-lg;
+
+  @include respond-to($tablet) {
     padding: $spacing-lg $spacing-xxxl;
   }
 }
 
-.wedding_header_image {
-  position: absolute;
-  top: 50%;
-  height: 50%;
+.wedding_image {
+  background-color: $color-dark;
+  min-height: 150vh;
+  padding: 20vmin $spacing-sm;
+  position: relative;
 
   img {
-    @include size(100%);
-    object-fit: cover;
-  }
-}
+    position: sticky;
+    top: 50%;
+    transform: translateY(-50%);
+    max-height: 75vmin;
+    object-fit: contain;
+    margin: 0 auto;
+    width: auto;
 
-.wedding_image {
-  padding: $spacing-sm $spacing-sm 0 $spacing-sm;
+    &:hover {
+      z-index: 1;
+    }
+  }
 
   @include respond-to($tablet) {
-    padding: $spacing-lg $spacing-lg 0 $spacing-lg;
+    padding: 25vmin $spacing-lg;
   }
 }
