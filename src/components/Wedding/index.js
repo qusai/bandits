@@ -16,7 +16,9 @@ const Wedding = ({ doc }) => {
     <section className={styles.wedding}>
       <div className={styles.wedding_header}>
         <h2 className={styles.wedding_name}>
-          <span>{doc.data.wedding_name[0].text}</span>
+          <span className={styles.wedding_name_text}>
+            {doc.data.wedding_name[0].text}
+          </span>
         </h2>
       </div>
       {wedding}

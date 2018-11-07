@@ -40,3 +40,6 @@ $desktop-xl: 1920px;
 // Letter spacing
 $ls-loose: calc(#{$ratio}/ 4rem);
 $ls-x-loose: calc(#{$ratio}/ 2rem);
+
+// Gradients
+$gradient: linear-gradient(45deg, #79d5ff 0%, #f4b4ff 100%);
