@@ -37,6 +37,7 @@
       }
 
       @include respond-to($tablet) {
+        display: block;
         font-size: 5vmin;
       }
     }
