@@ -6,6 +6,7 @@
   background-color: $color-dark;
   display: grid;
   padding-top: 50vmin;
+  padding-bottom: 20vmin;
   position: relative;
 }
 
@@ -50,6 +51,10 @@
   background-color: $color-dark;
   padding: 20vmin $spacing-sm;
   position: relative;
+
+  &[data-index='0'] {
+    margin-top: 50vmin;
+  }
 
   img {
     position: -webkit-sticky;

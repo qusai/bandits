@@ -6,7 +6,7 @@ const Wedding = ({ doc }) => {
   // Get layouts
   const wedding = doc.data.wedding_photos.map((photo, index) => {
     return (
-      <div key={index} className={styles.wedding_image}>
+      <div key={index} className={styles.wedding_image} data-index={index}>
         <ResponsiveImage image={photo.wedding_photo} />
       </div>
     )
