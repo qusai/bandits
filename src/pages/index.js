@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
 import Link from 'gatsby-link'
-import Loading from '../components/Loading'
-import Header from '../components/Header'
-import Body from '../components/Body'
 import Prismic from 'prismic-javascript'
 import { RichText, Date } from 'prismic-reactjs'
 import all from '../prismic'
+import Loading from '../components/Loading'
+import Header from '../components/Header'
+import Body from '../components/Body'
+import Footer from '../components/Footer'
 
 class IndexPage extends Component {
   state = {
@@ -27,6 +28,7 @@ class IndexPage extends Component {
         {!headerLoaded && <Loading />}
         <Header headerLoaded={this.headerLoaded} />
         <Body />
+        <Footer />
       </section>
     )
   }
