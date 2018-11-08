@@ -12,6 +12,10 @@ body {
 a {
   text-decoration: none;
   color: $color-base;
+
+  &:hover {
+    color: $color-black;
+  }
 }
 
 img {
