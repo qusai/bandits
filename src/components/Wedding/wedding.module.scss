@@ -48,7 +48,6 @@
 
 .wedding_image {
   background-color: $color-dark;
-  min-height: 150vh;
   padding: 20vmin $spacing-sm;
   position: relative;
 
@@ -57,7 +56,7 @@
     position: sticky;
     top: 50%;
     transform: translateY(-50%);
-    max-height: 75vmin;
+    max-height: 100vmin;
     object-fit: contain;
     margin: 0 auto;
     max-width: 100%;
@@ -69,6 +68,11 @@
   }
 
   @include respond-to($tablet) {
+    min-height: 150vh;
     padding: 25vmin $spacing-lg;
+
+    img {
+      max-height: 75vmin;
+    }
   }
 }
