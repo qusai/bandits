@@ -5,7 +5,7 @@ const Footer = () => {
   const date = new Date()
 
   return (
-    <footer className={styles.footer}>
+    <footer id="contact" className={styles.footer}>
       <ul className={styles.footer_contact_info}>
         <li>
           <a href="mailto:hello@bandits.photography" title="Send us an email">
@@ -31,7 +31,9 @@ const Footer = () => {
           </a>
         </li>
       </ul>
-      <p className={styles.copyrights}>©{date.getFullYear()}</p>
+      <p className={styles.copyrights}>
+        ©{date.getFullYear()}. Bandits Wedding Photography.
+      </p>
     </footer>
   )
 }

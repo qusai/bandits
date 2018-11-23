@@ -13,6 +13,7 @@
 .wedding_header {
   display: flex;
   justify-content: center;
+  position: -webkit-sticky;
   position: sticky;
   top: 50%;
   transform: translateY(-50%);
@@ -49,11 +50,12 @@
 
 .wedding_image {
   background-color: $color-dark;
+  min-height: 150vh;
   padding: 20vmin $spacing-sm;
   position: relative;
 
   &[data-index='0'] {
-    margin-top: 50vmin;
+    margin-top: 25vmin;
   }
 
   img {
@@ -73,7 +75,6 @@
   }
 
   @include respond-to($tablet) {
-    min-height: 150vh;
     padding: 25vmin $spacing-lg;
 
     img {

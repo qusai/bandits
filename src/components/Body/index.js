@@ -2,11 +2,14 @@ import React, { Component } from 'react'
 import Prismic from 'prismic-javascript'
 import { apiEndpoint, accessToken } from '../../prismic'
 import Wedding from '../Wedding'
+import Nav from '../Nav'
 import styles from './body.module.scss'
+import Helmet from 'react-helmet'
 
 class Body extends Component {
   state = {
     weddings: [],
+    isToggleOn: false,
   }
 
   componentWillMount() {
@@ -22,15 +25,30 @@ class Body extends Component {
     })
   }
 
+  navToggle = () => {
+    this.setState(state => ({
+      isToggleOn: !state.isToggleOn,
+    }))
+  }
+
   render() {
-    const { weddings } = this.state
+    const { weddings, isToggleOn } = this.state
+
     const wedding = weddings.map((wedding, index) => {
       return wedding.data.wedding_photos.length ? (
         <Wedding doc={wedding} key={index} />
       ) : null
     })
 
-    return <div className={styles.body}>{wedding}</div>
+    return (
+      <div className={styles.body}>
+        <Helmet>
+          <body class={isToggleOn ? 'nav_on' : null} />
+        </Helmet>
+        <Nav navToggle={this.navToggle} />
+        {wedding}
+      </div>
+    )
   }
 }
 

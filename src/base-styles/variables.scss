@@ -3,12 +3,14 @@ $ratio: 1.1618;
 
 // Fonts
 $serif: 'Berlingske', serif;
-$sans: 'GT America', sans-serif;
+$sans: sans-serif;
 
 // Font sizes
 $fs-base: 1rem;
 $fs-md: $fs-base * $ratio;
 $fs-lg: $fs-md * $ratio;
+$fs-xl: $fs-lg * $ratio * 1.5;
+$fs-xxl: $fs-xl * $ratio * 1.5;
 $fs-sm: $fs-base / $ratio;
 $fs-xs: $fs-sm / $ratio;
 
@@ -43,3 +45,8 @@ $ls-x-loose: calc(#{$ratio}/ 2rem);
 
 // Gradients
 $gradient: linear-gradient(45deg, #79d5ff 0%, #f4b4ff 100%);
+
+// Transitions
+$t-duration: 0.6s;
+$t-timing: cubic-bezier(0.19, 1, 0.22, 1);
+$transition: $t-duration $t-timing;

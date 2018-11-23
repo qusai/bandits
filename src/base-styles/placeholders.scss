@@ -2,3 +2,18 @@
   text-transform: uppercase;
   letter-spacing: $ls-loose;
 }
+
+%reset-btn {
+  border-radius: 0;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+  outline: 0;
+  padding: 0;
+
+  &:active,
+  &:focus,
+  &:hover {
+    color: $color-black;
+  }
+}
