@@ -58,8 +58,17 @@
   align-self: flex-end;
   bottom: $spacing-md;
   font-family: $sans;
-  font-size: $fs-sm;
+  font-size: $fs-xs;
   margin: $spacing-md $spacing-md $spacing-xxxl;
   position: relative;
   text-align: center;
+
+  @include respond-to($tablet) {
+    font-size: $fs-sm;
+  }
+
+  @include respond-to($desktop) {
+    margin: $spacing-md;
+    bottom: $spacing-lg;
+  }
 }

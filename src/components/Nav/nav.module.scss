@@ -44,44 +44,47 @@
   }
 }
 
-.nav_button {
+.nav_button,
+.nav_button_close {
   @extend %reset-btn;
   color: $color-base;
   font-family: $sans;
   font-size: $fs-lg;
-  left: 50%;
   letter-spacing: 3px;
   line-height: 1;
   padding: $spacing-base;
   position: fixed;
+  right: 0;
   text-align: center;
   top: calc(100% - #{$spacing-xxxl});
-  transform: translateX(-50%);
   z-index: 1000;
 
   @include respond-to($tablet) {
+    padding: $spacing-base $spacing-lg;
     transform-origin: bottom;
-    left: auto;
-    right: 0;
     transform: scale(1.25);
   }
 }
 
 .contact_link {
   @extend %uppercase;
-  display: none;
+  bottom: $spacing-md;
+  font-size: $fs-xs;
+  font-weight: bold;
+  left: 0;
   padding: $spacing-md $spacing-base;
+  position: fixed;
+  z-index: 1000;
 
   @include respond-to($tablet) {
-    display: block;
-    left: 0;
-    position: fixed;
-    bottom: $spacing-lg;
-    z-index: 1000;
+    bottom: $spacing-xl;
+    font-size: $fs-sm;
+    padding: $spacing-base $spacing-lg;
   }
 }
 
 .nav_button,
+.nav_button_close,
 .contact_link {
   @include respond-to($desktop) {
     margin: 0 $spacing-lg;

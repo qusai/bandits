@@ -25,10 +25,12 @@ class Body extends Component {
     })
   }
 
-  navToggle = () => {
+  navToggle = action => {
     this.setState(state => ({
       isToggleOn: !state.isToggleOn,
     }))
+
+    action == 'close' ? this.setState({ isToggleOn: false }) : null
   }
 
   render() {
@@ -45,7 +47,7 @@ class Body extends Component {
         <Helmet>
           <body class={isToggleOn ? 'nav_on' : null} />
         </Helmet>
-        <Nav navToggle={this.navToggle} />
+        <Nav navToggle={this.navToggle} isToggleOn={isToggleOn} />
         {wedding}
       </div>
     )

@@ -31,9 +31,7 @@ const Footer = () => {
           </a>
         </li>
       </ul>
-      <p className={styles.copyrights}>
-        ©{date.getFullYear()}. Bandits Wedding Photography.
-      </p>
+      <p className={styles.copyrights}>©{date.getFullYear()}. Bandits.</p>
     </footer>
   )
 }
