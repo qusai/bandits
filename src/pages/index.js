@@ -21,7 +21,6 @@ class IndexPage extends Component {
 
   render() {
     const { headerLoaded } = this.state
-    console.log(headerLoaded)
 
     return (
       <section>

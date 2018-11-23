@@ -56,8 +56,10 @@
 .copyrights {
   @extend %uppercase;
   align-self: flex-end;
+  bottom: $spacing-md;
   font-family: $sans;
   font-size: $fs-sm;
-  margin: $spacing-md;
+  margin: $spacing-md $spacing-md $spacing-xxxl;
+  position: relative;
   text-align: center;
 }
