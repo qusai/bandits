@@ -64,11 +64,8 @@
   text-align: center;
 
   @include respond-to($tablet) {
-    font-size: $fs-sm;
-  }
-
-  @include respond-to($desktop) {
-    margin: $spacing-md;
     bottom: $spacing-lg;
+    font-size: $fs-sm;
+    margin: $spacing-md;
   }
 }

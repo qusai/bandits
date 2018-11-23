@@ -17,6 +17,7 @@ const Nav = ({ navToggle, isToggleOn }) => {
       >
         <a
           className={styles.nav_item}
+          data-index="1"
           href="#kristin-ian"
           onClick={handleClick}
         >
@@ -24,6 +25,7 @@ const Nav = ({ navToggle, isToggleOn }) => {
         </a>
         <a
           className={styles.nav_item}
+          data-index="2"
           href="#stephanie-ryan"
           onClick={handleClick}
         >
