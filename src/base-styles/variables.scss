@@ -50,3 +50,6 @@ $gradient: linear-gradient(45deg, #79d5ff 0%, #f4b4ff 100%);
 $t-duration: 0.6s;
 $t-timing: cubic-bezier(0.19, 1, 0.22, 1);
 $transition: $t-duration $t-timing;
+
+// Borders
+$border: 1px solid $color-black;

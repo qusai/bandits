@@ -40,12 +40,26 @@
 }
 
 .nav_item {
-  @extend %uppercase;
   @extend %reset-btn;
+  @extend %uppercase;
+  border-top: $border;
+  color: $color-black;
   counter-increment: index;
-  color: $color-base;
+  display: block;
   font-family: $serif;
   font-size: $fs-md;
+  text-align: center;
+  width: 100%;
+
+  &:last-child {
+    border-bottom: $border;
+  }
+
+  &:active,
+  &:focus,
+  &:hover {
+    color: $color-base;
+  }
 
   @include respond-to($mobile-lg) {
     font-size: $fs-xl;
