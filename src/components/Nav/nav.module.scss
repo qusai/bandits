@@ -47,10 +47,6 @@
   font-family: $serif;
   font-size: $fs-md;
 
-  &:before {
-    content: counter(index);
-  }
-
   @include respond-to($mobile-lg) {
     font-size: $fs-xl;
   }
