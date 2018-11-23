@@ -2,19 +2,6 @@
 @import '../../base-styles/mixins';
 @import '../../base-styles/placeholders';
 
-@keyframes navOn {
-  from {
-    opacity: 0;
-    transform-origin: bottom;
-    transform: scaleY(0);
-  }
-  to {
-    opacity: 1;
-    transform-origin: bottom;
-    transform: scaleY(1);
-  }
-}
-
 .nav_content_on,
 .nav_content_off {
   align-items: center;
@@ -48,6 +35,8 @@
   display: block;
   font-family: $serif;
   font-size: $fs-md;
+  padding: $spacing-base 0 $spacing-lg;
+  position: relative;
   text-align: center;
   width: 100%;
 

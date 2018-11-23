@@ -47,7 +47,11 @@ class Body extends Component {
         <Helmet>
           <body class={isToggleOn ? 'nav_on' : null} />
         </Helmet>
-        <Nav navToggle={this.navToggle} isToggleOn={isToggleOn} />
+        <Nav
+          navToggle={this.navToggle}
+          isToggleOn={isToggleOn}
+          weddings={weddings}
+        />
         {wedding}
       </div>
     )
