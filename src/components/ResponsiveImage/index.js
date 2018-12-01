@@ -9,6 +9,12 @@ class ResponsiveImage extends Component {
     this.setState({ loaded: true })
   }
 
+  handleClick = () => {
+    const { openModal, image } = this.props
+
+    openModal(image)
+  }
+
   render() {
     const { image } = this.props
     const { loaded } = this.state
@@ -26,7 +32,7 @@ class ResponsiveImage extends Component {
           <source media="(max-width: 768px)" srcSet={image.lg.url} />
           <source media="(max-width: 2560px)" srcSet={image.xl.url} />
           <source srcSet={image.url} />
-          <img src={image.url} alt="" />
+          <img src={image.url} alt="" onClick={this.handleClick} />
         </picture>
       )
     }

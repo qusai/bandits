@@ -2,13 +2,12 @@ import React, { Component } from 'react'
 import styles from './wedding.module.scss'
 import ResponsiveImage from '../ResponsiveImage'
 
-const Wedding = ({ doc }) => {
-  console.log(doc)
+const Wedding = ({ doc, openModal }) => {
   // Get layouts
   const wedding = doc.data.wedding_photos.map((photo, index) => {
     return (
       <div key={index} className={styles.wedding_image} data-index={index}>
-        <ResponsiveImage image={photo.wedding_photo} />
+        <ResponsiveImage image={photo.wedding_photo} openModal={openModal} />
       </div>
     )
   })

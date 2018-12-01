@@ -1,0 +1,24 @@
+@import '../../base-styles/variables';
+@import '../../base-styles/mixins';
+
+.modal {
+  align-items: center;
+  background-color: $color-dark;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  left: 0;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+
+  picture {
+    height: 100%;
+
+    img {
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+    }
+  }
+}
