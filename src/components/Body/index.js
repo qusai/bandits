@@ -48,7 +48,12 @@ class Body extends Component {
 
     const wedding = weddings.map((wedding, index) => {
       return wedding.data.wedding_photos.length ? (
-        <Wedding doc={wedding} key={index} openModal={this.openModal} />
+        <Wedding
+          doc={wedding}
+          key={index}
+          openModal={this.openModal}
+          isModalOn={isModalOn}
+        />
       ) : null
     })
 
