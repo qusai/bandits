@@ -14,7 +14,7 @@ const Wedding = ({ doc, openModal, isModalOn }) => {
 
   return (
     <section id={doc.uid} className={styles.wedding}>
-      {isModalOn ? (
+      {isModalOn ? null : (
         <div className={styles.wedding_header}>
           <h2 className={styles.wedding_name}>
             <span className={styles.wedding_name_text}>
@@ -22,7 +22,7 @@ const Wedding = ({ doc, openModal, isModalOn }) => {
             </span>
           </h2>
         </div>
-      ) : null}
+      )}
 
       {wedding}
     </section>

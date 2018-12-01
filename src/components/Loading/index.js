@@ -10,7 +10,7 @@ const Loading = () => {
     height: '100vh',
     justifyContent: 'center',
     left: 0,
-    position: 'fixed',
+    position: 'absolute',
     top: 0,
     width: '100vw',
     zIndex: '100000',
@@ -18,7 +18,7 @@ const Loading = () => {
 
   return (
     <div className={styles.loading} style={inlineLoadingStyles}>
-      <h1>Loading...</h1>
+      <span className={styles.loading_spinner} />
     </div>
   )
 }

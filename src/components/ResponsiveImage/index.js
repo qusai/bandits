@@ -1,15 +1,16 @@
 import React, { Component } from 'react'
+import styles from './responsive-image.module.scss'
 
 class ResponsiveImage extends Component {
   state = {
-    loaded: false,
+    imageStatus: 'loading',
   }
 
-  componentDidMount() {
-    this.setState({ loaded: true })
+  handleImageLoaded = () => {
+    this.setState({ imageStatus: 'loaded' })
   }
 
-  handleClick = () => {
+  handleClick = e => {
     const { openModal, image } = this.props
 
     openModal(image)
@@ -17,30 +18,20 @@ class ResponsiveImage extends Component {
 
   render() {
     const { image } = this.props
-    const { loaded } = this.state
-
-    const loading = {
-      filter: 'blur(20px)',
-      overflow: 'hidden',
-      transform: 'scale(1.1)',
-    }
-
-    if (loaded) {
-      return (
-        <picture>
-          <source media="(max-width: 400px)" srcSet={image.md.url} />
-          <source media="(max-width: 768px)" srcSet={image.lg.url} />
-          <source media="(max-width: 2560px)" srcSet={image.xl.url} />
-          <source srcSet={image.url} />
-          <img src={image.url} alt="" onClick={this.handleClick} />
-        </picture>
-      )
-    }
+    const { imageStatus } = this.state
 
     return (
-      <picture style={loading}>
-        <source srcSet={image.md.url} />
-        <img src={image.url} alt="" />
+      <picture>
+        <source media="(max-width: 400px)" srcSet={image.md.url} />
+        <source media="(max-width: 768px)" srcSet={image.lg.url} />
+        <source media="(max-width: 2560px)" srcSet={image.xl.url} />
+        <source srcSet={image.url} />
+        <img
+          className={imageStatus == 'loaded' ? null : 'loading'}
+          onClick={this.handleClick}
+          onLoad={this.handleImageLoaded}
+          src={image.url}
+        />
       </picture>
     )
   }
