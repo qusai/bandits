@@ -8,12 +8,22 @@ class Modal extends Component {
       e.preventDefault()
       return false
     }
+
+    document.addEventListener('keydown', this.handleKeydown, false)
   }
 
   componentWillUnmount() {
     document.body.ontouchmove = () => {
       return true
     }
+
+    document.removeEventListener('keydown', this.handleKeydown, false)
+  }
+
+  handleKeydown = e => {
+    const { openModal } = this.props
+
+    e.keyCode == 27 ? openModal() : null
   }
 
   render() {
