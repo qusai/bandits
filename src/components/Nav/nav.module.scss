@@ -30,7 +30,7 @@
   @extend %reset-btn;
   @extend %uppercase;
   border-top: $border;
-  color: $color-black;
+  color: $color-base;
   counter-increment: index;
   display: block;
   font-family: $serif;
@@ -47,7 +47,7 @@
   &:active,
   &:focus,
   &:hover {
-    color: $color-base;
+    color: $color-black;
   }
 
   @include respond-to($mobile-lg) {

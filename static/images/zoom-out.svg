@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35">
   <g fill="none" fill-rule="evenodd">
-    <circle cx="17.5" cy="17.5" r="17.5" fill="#1D1C1C"/>
+    <circle cx="17.5" cy="17.5" r="17.5" fill="#464f60"/>
     <g stroke="#FFE5DF" transform="translate(10 10)">
       <polyline points="15 11 11 11 11 15"/>
       <polyline points="4 0 0 0 0 4" transform="rotate(180 2 2)"/>
