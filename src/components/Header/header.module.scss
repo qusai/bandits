@@ -52,6 +52,12 @@
   margin: $spacing-xs 0 $spacing-xxs;
   text-decoration: none;
 
+  &:active,
+  &:focus,
+  &:hover {
+    color: $color-base;
+  }
+
   @include respond-to($tablet) {
     margin: 0;
   }
