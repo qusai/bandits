@@ -27,10 +27,10 @@ class Modal extends Component {
   }
 
   render() {
-    const { modalImage, openModal } = this.props
+    const { modalImage, openModal, delayModalClose } = this.props
 
     return (
-      <div className={styles.modal}>
+      <div className={delayModalClose ? styles.modal_close : styles.modal}>
         <ResponsiveImage image={modalImage} openModal={openModal} />
       </div>
     )

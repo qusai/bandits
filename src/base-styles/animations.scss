@@ -1,0 +1,44 @@
+$modal-bg: $color-blue;
+$img-scale: 1.0135;
+
+@keyframes imgFadeIn {
+  from {
+    filter: saturate(0);
+    opacity: 0;
+    transform: scaleY($img-scale);
+  }
+  to {
+    filter: saturate(1);
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+
+@keyframes modalFadeIn {
+  from {
+    background-color: transparent;
+  }
+  to {
+    background-color: $modal-bg;
+  }
+}
+
+@keyframes imgFadeOut {
+  from {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+  to {
+    opacity: 0;
+    transform: scaleY($img-scale);
+  }
+}
+
+@keyframes modaleFadeOut {
+  from {
+    background-color: $modal-bg;
+  }
+  to {
+    background-color: transparent;
+  }
+}
