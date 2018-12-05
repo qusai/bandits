@@ -13,6 +13,7 @@ class Body extends Component {
     isToggleOn: false,
     isModalOn: false,
     modalImage: null,
+    delayModalClose: false,
   }
 
   componentWillMount() {
@@ -36,15 +37,33 @@ class Body extends Component {
     action == 'close' ? this.setState({ isToggleOn: false }) : null
   }
 
+  delayModalClose = () => {
+    this.setState({ delayModalClose: true })
+
+    setTimeout(() => {
+      this.setState({ isModalOn: false, delayModalClose: false })
+    }, 1200)
+  }
+
   openModal = image => {
-    this.setState(state => ({
-      isModalOn: !state.isModalOn,
-      modalImage: image,
-    }))
+    const { isModalOn } = this.state
+
+    isModalOn
+      ? this.delayModalClose()
+      : this.setState({
+          isModalOn: true,
+          modalImage: image,
+        })
   }
 
   render() {
-    const { weddings, isToggleOn, isModalOn, modalImage } = this.state
+    const {
+      weddings,
+      isToggleOn,
+      isModalOn,
+      modalImage,
+      delayModalClose,
+    } = this.state
 
     const wedding = weddings.map((wedding, index) => {
       return wedding.data.wedding_photos.length ? (
@@ -68,7 +87,11 @@ class Body extends Component {
           weddings={weddings}
         />
         {isModalOn ? (
-          <Modal modalImage={modalImage} openModal={this.openModal} />
+          <Modal
+            modalImage={modalImage}
+            openModal={this.openModal}
+            delayModalClose={delayModalClose}
+          />
         ) : null}
         {wedding}
       </div>

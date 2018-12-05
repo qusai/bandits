@@ -1,23 +1,10 @@
 @import '../../base-styles/variables';
+@import '../../base-styles/animations';
 @import '../../base-styles/mixins';
 
-$img-scale: 1.01;
-$img-blur: 5px;
-
-@keyframes imgFadeIn {
-  from {
-    filter: saturate(0) blur($img-blur);
-    transform: scale($img-scale);
-  }
-  to {
-    filter: saturate(1) blur(0px);
-    transform: scale(1);
-  }
-}
-
-.modal {
+.modal,
+.modal_close {
   align-items: center;
-  background-color: $color-blue;
   display: flex;
   height: 100%;
   justify-content: center;
@@ -30,14 +17,40 @@ $img-blur: 5px;
     height: 100%;
 
     img {
-      animation: imgFadeIn $t-duration #{$t-duration / 3} forwards;
-      animation-timing-function: $t-timing;
       cursor: url(../../../static/images/zoom-out.svg) 17.5 17.5, zoom-out;
-      filter: saturate(0) blur($img-blur);
       height: 100%;
       object-fit: contain;
       object-position: center;
-      transform: scale($img-scale);
+    }
+  }
+}
+
+.modal {
+  animation: modalFadeIn $t-duration forwards;
+  animation-timing-function: $t-timing;
+  background-color: transparent;
+
+  img {
+    animation: imgFadeIn #{$t-duration * 2} $t-duration forwards;
+    animation-timing-function: $t-timing;
+    filter: saturate(0);
+    opacity: 0;
+    transform-origin: top center;
+    transform: scaleY($img-scale);
+  }
+}
+
+.modal_close {
+  animation: modaleFadeOut $t-duration $t-duration forwards;
+  animation-timing-function: $t-timing;
+  background-color: $modal-bg;
+
+  picture {
+    img {
+      animation: imgFadeOut ($t-duration / 2) forwards;
+      opacity: 1;
+      transform: scaleY(1);
+      transform-origin: bottom center;
     }
   }
 }

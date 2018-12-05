@@ -64,6 +64,7 @@
     max-height: 100vmin;
     max-width: 100%;
     object-fit: contain;
+    position: relative;
     top: 50%;
     transform: translateY(-50%);
     width: auto;
@@ -76,14 +77,11 @@
   }
 
   @include respond-to($tablet) {
-    min-height: 150vh;
     padding: 25vmin $spacing-lg;
     z-index: initial;
 
     img {
       max-height: 75vmin;
-      position: -webkit-sticky;
-      position: sticky;
     }
   }
 }
