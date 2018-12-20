@@ -7,16 +7,22 @@ $dot-size: 5px;
 
 .nav_content_on,
 .nav_content_off {
-  align-items: center;
+  align-items: flex-end;
   background-color: $color-dark;
+  bottom: 0;
   counter-reset: index;
   flex-direction: column;
   height: 100%;
-  justify-content: center;
-  left: 0;
+  justify-content: flex-end;
+  right: 0;
+  padding-bottom: $spacing-xxxl;
   position: fixed;
-  top: 0;
   width: 100%;
+
+  @include respond-to($tablet) {
+    padding-bottom: $spacing-xxxl * 2;
+    padding-right: $spacing-xl;
+  }
 }
 
 .nav_content_on {
@@ -31,20 +37,14 @@ $dot-size: 5px;
 
 .nav_item {
   @extend %reset-btn;
-  border-top: $border;
   color: $color-base;
   counter-increment: index;
   display: block;
   font-family: $serif;
-  font-size: $fs-md;
-  padding: $spacing-base 0 $spacing-lg;
+  font-size: $fs-xl;
+  padding: $spacing-base $spacing-lg;
   position: relative;
-  text-align: center;
-  width: 100%;
-
-  &:last-child {
-    border-bottom: $border;
-  }
+  text-align: right;
 
   &:active,
   &:focus,
