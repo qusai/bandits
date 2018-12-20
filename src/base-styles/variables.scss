@@ -3,7 +3,7 @@ $ratio: 1.1618;
 
 // Fonts
 $serif: 'Berlingske', serif;
-$sans: sans-serif;
+$sans: 'Termina', sans-serif;
 
 // Font sizes
 $fs-base: 1rem;
@@ -13,6 +13,7 @@ $fs-xl: $fs-lg * $ratio * 1.5;
 $fs-xxl: $fs-xl * $ratio * 1.5;
 $fs-sm: $fs-base / $ratio;
 $fs-xs: $fs-sm / $ratio;
+$fs-xxs: $fs-xs / ($ratio * 2);
 
 // Colors
 $color-base: #ffe5df;

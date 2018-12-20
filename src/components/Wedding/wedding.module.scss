@@ -22,22 +22,17 @@
 }
 
 .wedding_name {
-  @extend %uppercase;
   align-items: center;
   color: $color-base;
   display: flex;
   font-family: $serif;
-  font-size: 8vmin;
+  font-size: 12vmin;
   font-weight: 100;
   justify-content: center;
   margin: 0;
   text-align: center;
   position: relative;
   z-index: 1;
-
-  @include respond-to($tablet) {
-    font-size: 12vmin;
-  }
 }
 
 .wedding_name_text {
