@@ -42,7 +42,7 @@ const Nav = ({ navToggle, isToggleOn, weddings }) => {
         onClick={handleClick}
         title="Weddings List"
       >
-        {isToggleOn ? '✕' : '•••'}
+        <span className={styles.btn_icon} />
       </button>
     </div>
   )

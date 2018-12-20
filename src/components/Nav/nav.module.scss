@@ -2,6 +2,9 @@
 @import '../../base-styles/mixins';
 @import '../../base-styles/placeholders';
 
+$btn-size: 30px;
+$dot-size: 5px;
+
 .nav_content_on,
 .nav_content_off {
   align-items: center;
@@ -61,46 +64,83 @@
 .nav_button,
 .nav_button_close {
   @extend %reset-btn;
-  color: $color-base;
-  font-family: $sans;
-  font-size: $fs-lg;
-  letter-spacing: 3px;
-  line-height: 1;
-  padding: $spacing-base;
   position: fixed;
   right: 0;
   text-align: center;
-  top: calc(100% - #{$spacing-xxxl});
   z-index: 1000;
+}
+
+.btn_icon {
+  @include size($btn-size, $btn-size / 2);
+  display: block;
+  position: relative;
+  top: 0;
+  left: 0;
+
+  &::after,
+  &::before {
+    @include size($dot-size);
+    background-color: $color-base;
+    border-radius: 50%;
+    content: '';
+    left: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: $transition;
+  }
+
+  &:after {
+    box-shadow: calc(#{$btn-size / 2} - #{$dot-size / 2}) 0 $color-base;
+    left: 50%;
+    transition-delay: $t-duration / 3;
+    transform: translate(-50%, -50%);
+  }
+
+  .nav_button_close & {
+    &::after,
+    &::before {
+      @include size($btn-size, 2px);
+      border-radius: 0;
+      box-shadow: none;
+      top: 50%;
+      transform-origin: left;
+      left: 50%;
+    }
+
+    &::after {
+      transform: rotate(45deg) translate(-50%, -50%);
+    }
+
+    &::before {
+      transform: rotate(-45deg) translate(-50%, -50%);
+    }
+  }
 
   @include respond-to($tablet) {
-    padding: $spacing-base $spacing-lg;
-    transform-origin: bottom;
-    transform: scale(1.25);
+    @include size($btn-size);
   }
 }
 
 .contact_link {
   @extend %uppercase;
-  bottom: $spacing-md;
-  font-size: $fs-xs;
-  font-weight: bold;
   left: 0;
-  padding: $spacing-md $spacing-base $spacing-base;
   position: fixed;
   z-index: 1000;
-
-  @include respond-to($tablet) {
-    font-size: $fs-sm;
-    padding-bottom: $spacing-md;
-    bottom: $spacing-lg;
-  }
 }
 
 .nav_button,
 .nav_button_close,
 .contact_link {
-  @include respond-to($desktop) {
+  bottom: $spacing-md;
+  font-size: $fs-xxs;
+  font-weight: bold;
+  padding: $spacing-md $spacing-base $spacing-base;
+
+  @include respond-to($tablet) {
+    bottom: $spacing-lg;
+    font-size: $fs-xs;
     margin: 0 $spacing-lg;
+    padding-bottom: $spacing-md;
   }
 }

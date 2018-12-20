@@ -26,7 +26,7 @@
     a {
       box-shadow: inset 0 -1px $color-base;
       font-family: $sans;
-      font-size: 10vmin;
+      font-size: $fs-md;
       line-height: 1;
       padding: 0;
       text-shadow: -2px -2px $color-dark, -2px 2px $color-dark,
@@ -38,12 +38,11 @@
 
       @include respond-to($tablet) {
         display: block;
-        font-size: 5vmin;
       }
     }
 
     @include respond-to($tablet) {
-      margin: $spacing-xxxl;
+      margin: $spacing-xxl;
     }
   }
 

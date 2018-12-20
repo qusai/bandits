@@ -38,9 +38,13 @@
   display: block;
   font-family: $sans;
   font-weight: normal;
-  font-size: $fs-xs;
+  font-size: $fs-xxs;
   pointer-events: none;
   will-change: opacity;
+
+  @include respond-to($tablet) {
+    font-size: $fs-xs;
+  }
 }
 
 .site_name_link {
