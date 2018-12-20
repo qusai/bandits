@@ -5,7 +5,7 @@
 body {
   -webkit-font-smoothing: antialiased;
   background-color: $color-dark;
-  font-family: 'Relative', sans-serif;
+  font-family: $sans;
   margin: 0;
 
   &.nav_on {

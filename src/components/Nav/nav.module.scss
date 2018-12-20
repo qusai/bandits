@@ -28,7 +28,6 @@
 
 .nav_item {
   @extend %reset-btn;
-  @extend %uppercase;
   border-top: $border;
   color: $color-base;
   counter-increment: index;

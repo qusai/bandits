@@ -34,7 +34,7 @@
 
 .site_tagline {
   @extend %uppercase;
-  color: $color-black;
+  color: $color-base;
   display: block;
   font-family: $sans;
   font-weight: normal;
@@ -45,18 +45,11 @@
 
 .site_name_link {
   @extend %uppercase;
-  color: $color-black;
   display: block;
   font-size: 15vw;
   font-weight: normal;
   margin: $spacing-xs 0 $spacing-xxs;
   text-decoration: none;
-
-  &:active,
-  &:focus,
-  &:hover {
-    color: $color-base;
-  }
 
   @include respond-to($tablet) {
     margin: 0;
