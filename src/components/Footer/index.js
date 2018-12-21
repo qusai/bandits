@@ -9,7 +9,7 @@ const Footer = () => {
       <ul className={styles.footer_contact_info}>
         <li>
           <a href="mailto:hello@bandits.photography" title="Send us an email">
-            Email
+            Email Us
           </a>
         </li>
         <li>
