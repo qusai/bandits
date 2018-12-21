@@ -155,13 +155,13 @@ $dot-size: 5px;
 .nav_button_close,
 .contact_link {
   bottom: $spacing-md;
-  font-size: $fs-xxs;
+  font-size: $fs-xs;
   font-weight: bold;
   padding: $spacing-md $spacing-base $spacing-base;
 
   @include respond-to($tablet) {
     bottom: $spacing-lg;
-    font-size: $fs-xs;
+    font-size: $fs-sm;
     margin: 0 $spacing-lg;
     padding-bottom: $spacing-md;
   }
