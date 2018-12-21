@@ -139,7 +139,7 @@ $dot-size: 5px;
 
     &::after,
     &::before {
-      transition: all $transition, background-color 0s, box-shadow 0s, left 0s;
+      transition: all $transition, background-color 0s, box-shadow 0s;
     }
   }
 }
