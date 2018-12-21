@@ -3,7 +3,7 @@
 @import '../../base-styles/placeholders';
 
 .footer {
-  background-color: $color-dark;
+  background: linear-gradient($color-dark, lighten($color-blue, 15));
   color: $color-base;
   display: flex;
   flex-direction: column;
