@@ -23,7 +23,7 @@
   font-family: $serif;
   font-size: $fs-xl;
   font-weight: normal;
-  margin-bottom: auto;
+  margin: $spacing-md 0;
   text-align: center;
 
   @include respond-to($tablet) {
@@ -37,8 +37,7 @@
 
 .footer_contact_info {
   list-style: none;
-  margin-bottom: $spacing-xxl;
-  padding: 0 0 $spacing-md;
+  margin-bottom: $spacing-xl;
 
   @include respond-to($tablet) {
     align-self: flex-end;
