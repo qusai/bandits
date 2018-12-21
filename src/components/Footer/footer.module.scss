@@ -29,6 +29,10 @@
   @include respond-to($tablet) {
     font-size: $fs-xxl;
   }
+
+  @include respond-to($desktop-lg) {
+    font-size: $fs-xxl * 1.25;
+  }
 }
 
 .footer_contact_info {

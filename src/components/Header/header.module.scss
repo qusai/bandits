@@ -23,8 +23,23 @@
   will-change: transform, top;
   z-index: 10;
 
+  &::before {
+    @include size(30px);
+    content: '';
+    background: url(../../../static/images/ornament.svg) no-repeat center;
+    background-size: 100%;
+    position: absolute;
+    bottom: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
   @include respond-to($tablet) {
     font-size: $fs-lg * 1.5;
+
+    &::before {
+      @include size(60px);
+    }
   }
 
   @include respond-to($desktop-lg) {
