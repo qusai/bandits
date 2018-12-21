@@ -17,7 +17,7 @@ class ResponsiveImage extends Component {
   }
 
   render() {
-    const { image } = this.props
+    const { image, headerImage } = this.props
     const { imageStatus } = this.state
 
     return (
@@ -31,6 +31,7 @@ class ResponsiveImage extends Component {
           onClick={this.handleClick}
           onLoad={this.handleImageLoaded}
           src={image.url}
+          tabIndex={headerImage ? null : '0'}
         />
       </picture>
     )

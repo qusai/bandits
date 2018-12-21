@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import styles from './wedding.module.scss'
 import ResponsiveImage from '../ResponsiveImage'
 
-const Wedding = ({ doc, openModal, isModalOn }) => {
+const Wedding = ({ doc, openModal, isModalOn, delayModalClose }) => {
   // Get layouts
   const wedding = doc.data.wedding_photos.map((photo, index) => {
     return (
@@ -14,9 +14,9 @@ const Wedding = ({ doc, openModal, isModalOn }) => {
 
   return (
     <section id={doc.uid} className={styles.wedding}>
-      {isModalOn ? null : (
+      {delayModalClose ? null : (
         <div className={styles.wedding_header}>
-          <h2 className={styles.wedding_name}>
+          <h2 className={styles.wedding_name} tabIndex="0">
             <span className={styles.wedding_name_text}>
               {doc.data.wedding_name[0].text}
             </span>

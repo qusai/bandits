@@ -72,6 +72,7 @@ class Body extends Component {
           key={index}
           openModal={this.openModal}
           isModalOn={isModalOn}
+          delayModalClose={delayModalClose}
         />
       ) : null
     })

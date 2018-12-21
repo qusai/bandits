@@ -31,7 +31,9 @@ const Footer = () => {
           </a>
         </li>
       </ul>
-      <p className={styles.copyrights}>©{date.getFullYear()}. Bandits.</p>
+      <p className={styles.copyrights}>
+        ©{date.getFullYear()}. <a href="/">Bandits.</a>
+      </p>
     </footer>
   )
 }
