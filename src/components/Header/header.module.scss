@@ -43,7 +43,7 @@
   will-change: opacity;
 
   @include respond-to($tablet) {
-    font-size: $fs-xs;
+    font-size: $fs-sm;
   }
 }
 

@@ -161,7 +161,7 @@ $dot-size: 5px;
 
   @include respond-to($tablet) {
     bottom: $spacing-lg;
-    font-size: $fs-xs;
+    font-size: $fs-sm;
     margin: 0 $spacing-lg;
     padding-bottom: $spacing-md;
   }
