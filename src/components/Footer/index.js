@@ -6,14 +6,15 @@ const Footer = () => {
 
   return (
     <footer id="contact" className={styles.footer}>
-      <h3 className={styles.footer_title}>Let's talk</h3>
       <div className={styles.footer_contact_info}>
+        <h3 className={styles.footer_title}>Follow Us</h3>
         <div className={styles.footer_social}>
           <div className={styles.footer_contact}>
             <a
               href="https://www.instagram.com/bandits.photography/"
               target="_blank"
               title="Follow Bandits Photography on Instagram"
+              className={styles.footer_contact_link}
             >
               Instagram
             </a>
@@ -26,6 +27,7 @@ const Footer = () => {
               href="https://twitter.com/BanditsWedding"
               target="_blank"
               title="Follow Bandits Photography on Twitter"
+              className={styles.footer_contact_link}
             >
               Twitter
             </a>
@@ -33,8 +35,12 @@ const Footer = () => {
         </div>
 
         <div className={styles.footer_contact}>
-          <a href="mailto:hello@bandits.photography" title="Send us an email">
-            Email Us
+          <a
+            className={styles.footer_contact_email}
+            href="mailto:hello@bandits.photography"
+            title="Send us an email"
+          >
+            Let's Talk Today
           </a>
         </div>
       </div>

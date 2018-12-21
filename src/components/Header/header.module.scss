@@ -16,7 +16,7 @@
   font-family: $serif;
   font-size: $fs-base;
   margin: 0;
-  padding-bottom: $spacing-sm;
+  padding-bottom: $spacing-xxs;
   position: fixed;
   text-align: center;
   width: 100%;
@@ -67,6 +67,7 @@
   display: block;
   font-size: 15vw;
   font-weight: normal;
+  line-height: 1;
   margin: $spacing-xs 0 $spacing-xxs;
   text-decoration: none;
 
