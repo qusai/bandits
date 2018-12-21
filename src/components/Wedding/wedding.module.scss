@@ -33,6 +33,10 @@
   text-align: center;
   position: relative;
   z-index: 1;
+
+  &:focus {
+    outline: 0;
+  }
 }
 
 .wedding_name_text {
@@ -67,6 +71,7 @@
     &:active,
     &:focus,
     &:hover {
+      outline: 0;
       z-index: 1;
     }
   }

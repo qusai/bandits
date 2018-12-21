@@ -7,7 +7,10 @@ const HeaderImages = ({ doc }) => {
     const header_images = doc.data.header_images.map((image, index) => {
       return (
         <div className={styles.header_image} key={index}>
-          <ResponsiveImage image={image.header_image} />
+          <ResponsiveImage
+            image={image.header_image}
+            headerImage="headerImage"
+          />
         </div>
       )
     })

@@ -1,51 +1,69 @@
-import React from 'react'
+import React, { Component } from 'react'
 import styles from './nav.module.scss'
 
-const Nav = ({ navToggle, isToggleOn, weddings }) => {
-  const handleClick = () => {
+class Nav extends Component {
+  handleClick = () => {
+    const { navToggle } = this.props
     navToggle()
+
+    setTimeout(() => {
+      this.refs.nav.focus()
+    }, 200)
   }
 
-  const closeNav = () => {
+  closeNav = () => {
+    const { navToggle } = this.props
     navToggle('close')
   }
 
-  const wedding_link = weddings.map((wedding, index) => {
-    const doc = wedding.data
-    const weddingName = doc.wedding_name[0].text
+  render() {
+    const { navToggle, isToggleOn, weddings } = this.props
 
-    return wedding.data.wedding_photos.length ? (
-      <a
-        className={styles.nav_item}
-        href={'#' + wedding.uid}
-        key={index}
-        onClick={handleClick}
-      >
-        {weddingName}
-      </a>
-    ) : null
-  })
+    const wedding_link = weddings.map((wedding, index) => {
+      const doc = wedding.data
+      const weddingName = doc.wedding_name[0].text
 
-  return (
-    <div className={styles.nav}>
-      <nav
-        className={isToggleOn ? styles.nav_content_on : styles.nav_content_off}
-      >
-        {wedding_link}
-      </nav>
-      <a className={styles.contact_link} href="#contact" onClick={closeNav}>
-        Contact
-      </a>
-      <button
-        aria-label="Menu"
-        className={isToggleOn ? styles.nav_button_close : styles.nav_button}
-        onClick={handleClick}
-        title="Weddings List"
-      >
-        <span className={styles.btn_icon} />
-      </button>
-    </div>
-  )
+      return wedding.data.wedding_photos.length ? (
+        <a
+          className={styles.nav_item}
+          href={'#' + wedding.uid}
+          key={index}
+          onClick={this.handleClick}
+        >
+          {weddingName}
+        </a>
+      ) : null
+    })
+
+    return (
+      <div className={styles.nav}>
+        <nav
+          className={
+            isToggleOn ? styles.nav_content_on : styles.nav_content_off
+          }
+          ref="nav"
+          tabIndex="0"
+        >
+          {wedding_link}
+        </nav>
+        <a
+          className={styles.contact_link}
+          href="#contact"
+          onClick={this.closeNav}
+        >
+          Contact
+        </a>
+        <button
+          aria-label="Menu"
+          className={isToggleOn ? styles.nav_button_close : styles.nav_button}
+          onClick={this.handleClick}
+          title="Weddings List"
+        >
+          <span className={styles.btn_icon} />
+        </button>
+      </div>
+    )
+  }
 }
 
 export default Nav

@@ -7,16 +7,22 @@ $dot-size: 5px;
 
 .nav_content_on,
 .nav_content_off {
-  align-items: center;
+  align-items: flex-end;
   background-color: $color-dark;
+  bottom: 0;
   counter-reset: index;
   flex-direction: column;
   height: 100%;
-  justify-content: center;
-  left: 0;
+  justify-content: flex-end;
+  right: 0;
+  padding-bottom: $spacing-xxxl * 1.5;
   position: fixed;
-  top: 0;
   width: 100%;
+
+  @include respond-to($tablet) {
+    padding-bottom: $spacing-xxxl * 3;
+    padding-right: $spacing-xl;
+  }
 }
 
 .nav_content_on {
@@ -31,20 +37,14 @@ $dot-size: 5px;
 
 .nav_item {
   @extend %reset-btn;
-  border-top: $border;
   color: $color-base;
   counter-increment: index;
   display: block;
   font-family: $serif;
-  font-size: $fs-md;
-  padding: $spacing-base 0 $spacing-lg;
+  font-size: $fs-xl;
+  padding: $spacing-base $spacing-lg;
   position: relative;
-  text-align: center;
-  width: 100%;
-
-  &:last-child {
-    border-bottom: $border;
-  }
+  text-align: right;
 
   &:active,
   &:focus,
@@ -68,6 +68,20 @@ $dot-size: 5px;
   right: 0;
   text-align: center;
   z-index: 1000;
+
+  &:focus,
+  &:hover {
+    .btn_icon {
+      &::after,
+      &::before {
+        background-color: $color-black;
+      }
+
+      &::after {
+        --box-shadow-color: #{$color-black};
+      }
+    }
+  }
 }
 
 .btn_icon {
@@ -87,13 +101,13 @@ $dot-size: 5px;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    transition: $transition;
   }
 
   &:after {
-    box-shadow: calc(#{$btn-size / 2} - #{$dot-size / 2}) 0 $color-base;
+    --box-shadow-color: #{$color-base};
+    box-shadow: calc(#{$btn-size / 2} - #{$dot-size / 2}) 0
+      var(--box-shadow-color);
     left: 50%;
-    transition-delay: $t-duration / 3;
     transform: translate(-50%, -50%);
   }
 
@@ -103,7 +117,6 @@ $dot-size: 5px;
       @include size($btn-size, 2px);
       border-radius: 0;
       box-shadow: none;
-      top: 50%;
       transform-origin: left;
       left: 50%;
     }
@@ -119,6 +132,15 @@ $dot-size: 5px;
 
   @include respond-to($tablet) {
     @include size($btn-size);
+
+    &::after,
+    &::before {
+      transition: all $transition, background-color 0s, box-shadow 0s;
+    }
+
+    &::before {
+      transition-delay: $t-duration / 4, 0s, 0s, 0s;
+    }
   }
 }
 
