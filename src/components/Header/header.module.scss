@@ -36,6 +36,7 @@
 
   @include respond-to($tablet) {
     font-size: $fs-lg * 1.5;
+    padding-bottom: $spacing-xs;
 
     &::before {
       @include size(60px);
@@ -72,6 +73,6 @@
   text-decoration: none;
 
   @include respond-to($tablet) {
-    margin: 0;
+    margin: $spacing-xs 0;
   }
 }
