@@ -10,7 +10,7 @@ class ResponsiveImage extends Component {
     this.setState({ imageStatus: 'loaded' })
   }
 
-  handleClick = e => {
+  handleClick = () => {
     const { openModal, image } = this.props
 
     openModal(image)
