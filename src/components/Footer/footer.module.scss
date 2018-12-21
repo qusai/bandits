@@ -19,14 +19,15 @@
 
 .footer_title {
   @extend %uppercase;
-  align-self: center;
+  align-self: flex-start;
   font-family: $serif;
   font-size: $fs-xl;
   font-weight: normal;
   margin: $spacing-md 0;
-  text-align: center;
+  padding: $spacing-sm;
 
   @include respond-to($tablet) {
+    align-self: center;
     font-size: $fs-xxl;
   }
 
