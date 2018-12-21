@@ -1,22 +1,39 @@
-import React from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
+import favicon from '../../static/images/favicon.png'
 
 import './global.scss'
 
-const Layout = ({ children, data }) => (
-  <main>
-    <Helmet>
-      <title>Bandits Wedding Photography</title>
-      <meta
-        name="description"
-        content="Bandits is an artist duo, wedding photographers based in Boston MA. We work with select couples to capture their love story."
-      />
-      <meta name="author" content="Qusai Akoud" />
-    </Helmet>
-    {children()}
-  </main>
-)
+class Layout extends Component {
+  componentDidMount() {
+    window.onfocus = () => {
+      document.title = 'Bandits Wedding Photography'
+    }
+    window.onblur = () => {
+      document.title = 'COME BACK!'
+    }
+  }
+
+  render() {
+    const { children, data } = this.props
+
+    return (
+      <main>
+        <Helmet>
+          <title>Bandits Wedding Photography</title>
+          <meta
+            name="description"
+            content="Bandits is an artist duo, wedding photographers based in Boston MA. We work with select couples to capture their love story."
+          />
+          <meta name="author" content="Qusai Akoud" />
+          <link rel="shortcut icon" type="image/png" href={favicon} />
+        </Helmet>
+        {children()}
+      </main>
+    )
+  }
+}
 
 Layout.propTypes = {
   children: PropTypes.func,
