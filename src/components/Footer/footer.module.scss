@@ -3,19 +3,17 @@
 @import '../../base-styles/placeholders';
 
 .footer {
-  align-items: center;
   background-color: $color-dark;
   color: $color-base;
-  display: grid;
+  display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
   min-height: 100vh;
   position: relative;
   top: 150vh;
 }
 
 .footer_contact_info {
-  align-self: flex-end;
   list-style: none;
   margin: $spacing-md 0;
   padding: 0;
@@ -48,14 +46,12 @@
 
 .copyrights {
   @extend %uppercase;
-  align-self: flex-end;
   bottom: $spacing-md;
   font-family: $sans;
   font-size: $fs-xxs;
   font-weight: 500;
   margin: $spacing-md $spacing-md $spacing-xxxl;
   position: relative;
-  text-align: center;
 
   @include respond-to($tablet) {
     bottom: $spacing-lg;
