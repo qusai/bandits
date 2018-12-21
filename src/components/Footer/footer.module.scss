@@ -21,14 +21,12 @@
   padding: 0;
 
   li {
-    margin: $spacing-md;
-
     a {
       display: inline-block;
       font-family: $sans;
       font-size: $fs-md;
       line-height: 1;
-      padding: $spacing-lg;
+      padding: $spacing-sm;
       text-shadow: -2px -2px $color-dark, -2px 2px $color-dark,
         2px -2px $color-dark, 2px 2px $color-dark;
 
