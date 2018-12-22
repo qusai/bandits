@@ -40,7 +40,7 @@ const Footer = () => {
             href="mailto:hello@bandits.photography"
             title="Send us an email"
           >
-            Let's Talk Today
+            Let’s Talk Today
           </a>
         </div>
       </div>
