@@ -3,7 +3,7 @@
 @import '../../base-styles/placeholders';
 
 .footer {
-  background-color: $color-dark;
+  background: linear-gradient($color-dark, lighten($color-blue, 15));
   color: $color-base;
   display: flex;
   flex-direction: column;
@@ -11,29 +11,133 @@
   min-height: 80vh;
   position: relative;
   top: 150vh;
+
+  @include respond-to($tablet) {
+    display: grid;
+  }
+}
+
+.footer_title {
+  @extend %uppercase;
+  align-self: flex-start;
+  font-family: $serif;
+  font-size: $fs-xl;
+  font-weight: normal;
+  margin: $spacing-md 0 0;
+  padding: $spacing-sm;
+
+  @include respond-to($tablet) {
+    align-self: center;
+    margin-bottom: $spacing-xl;
+    text-align: center;
+  }
 }
 
 .footer_contact_info {
   list-style: none;
-  margin-bottom: $spacing-xxl;
-  padding: 0 0 $spacing-md;
+  margin-bottom: $spacing-xl;
 
-  li {
-    a {
-      display: inline-block;
-      font-family: $sans;
-      font-size: $fs-md;
-      line-height: 1;
-      padding: $spacing-sm;
-      text-shadow: -2px -2px $color-dark, -2px 2px $color-dark,
-        2px -2px $color-dark, 2px 2px $color-dark;
+  @include respond-to($tablet) {
+    align-self: flex-end;
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
+    text-align: center;
+  }
+}
+
+.footer_contact_link,
+.footer_contact_email {
+  display: inline-block;
+  font-family: $sans;
+  font-size: $fs-md;
+  padding: $spacing-sm;
+}
+
+.footer_contact_link {
+  position: relative;
+
+  @include respond-to($mobile, $tablet) {
+    &::before {
+      @include size($spacing-md, 1px);
+      content: '';
+      position: absolute;
+      right: 100%;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: $color-base;
     }
+  }
+}
+
+.footer_contact_email {
+  border-radius: 40px;
+  border: 2px solid transparent;
+  background-color: $color-black;
+  padding: $spacing-sm $spacing-xxl;
+  margin-left: $spacing-sm;
+
+  &:focus,
+  &:hover {
+    background-color: transparent;
+    border-color: $color-black;
   }
 
   @include respond-to($tablet) {
+    margin-left: 0;
+  }
+}
+
+.footer_social {
+  margin-bottom: $spacing-xl;
+  margin-left: $spacing-sm;
+  padding-left: $spacing-md;
+
+  @include respond-to($tablet) {
+    align-items: center;
     display: flex;
-    flex-direction: column;
-    padding-left: $spacing-xl;
+    justify-content: center;
+    margin-bottom: $spacing-xxxl * 1.5;
+    margin-left: 0;
+    padding-left: 0;
+    width: 100vw;
+
+    .footer_contact {
+      text-align: left;
+      width: 25%;
+
+      &:first-child {
+        text-align: right;
+      }
+    }
+  }
+}
+
+.footer_ornament {
+  display: none;
+  position: relative;
+
+  @include respond-to($tablet) {
+    @include size(25%, 120px);
+    background: url(../../../static/images/ornament.svg) no-repeat center;
+    background-size: 120px;
+    display: block;
+
+    &::after,
+    &::before {
+      @include size(calc(50% - (120px / 2) - 15px), 1px);
+      background-color: $color-base;
+      content: '';
+      left: 0;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    &::after {
+      left: auto;
+      right: 0;
+    }
   }
 }
 
@@ -47,8 +151,9 @@
   position: relative;
 
   @include respond-to($tablet) {
+    align-self: flex-end;
     bottom: $spacing-lg;
-    font-size: $fs-sm;
+    font-size: $fs-xs;
     margin: $spacing-md;
     text-align: center;
   }
