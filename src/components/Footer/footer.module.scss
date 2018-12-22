@@ -21,13 +21,14 @@
   @extend %uppercase;
   align-self: flex-start;
   font-family: $serif;
-  font-size: $fs-xl;
+  font-size: $fs-lg;
   font-weight: normal;
   margin: $spacing-md 0 0;
   padding: $spacing-sm;
 
   @include respond-to($tablet) {
     align-self: center;
+    font-size: $fs-xl;
     margin-bottom: $spacing-xl;
     text-align: center;
   }
@@ -50,8 +51,12 @@
 .footer_contact_email {
   display: inline-block;
   font-family: $sans;
-  font-size: $fs-md;
-  padding: $spacing-sm;
+  font-size: $fs-sm;
+  padding: $spacing-xxs $spacing-sm;
+
+  @include respond-to($tablet) {
+    font-size: $fs-md;
+  }
 }
 
 .footer_contact_link {
