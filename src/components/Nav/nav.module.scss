@@ -65,7 +65,7 @@ $dot-size: 5px;
 .nav_button_close {
   @extend %reset-btn;
   position: fixed;
-  right: 0;
+  right: $spacing-md;
   text-align: center;
   z-index: 1000;
 
@@ -81,6 +81,10 @@ $dot-size: 5px;
         --box-shadow-color: #{$color-black};
       }
     }
+  }
+
+  @include respond-to($tablet) {
+    right: 0;
   }
 }
 
