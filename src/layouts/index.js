@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import favicon from '../../static/images/favicon.png'
+import ogImage from '../../static/images/og-bandits-image.jpg'
 
 import './global.scss'
 
@@ -37,10 +38,7 @@ class Layout extends Component {
             property="og:description"
             content="Bandits is an artist duo, wedding photographer couple based in Boston MA. We work with select couples to capture their love story."
           />
-          <meta
-            property="og:image"
-            content="../../static/images/og-bandits-image.jpg"
-          />
+          <meta property="og:image" content={ogImage} />
 
           <link rel="shortcut icon" type="image/png" href={favicon} />
         </Helmet>
