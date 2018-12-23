@@ -32,6 +32,7 @@ class Layout extends Component {
           <meta name="twitter:card" content="summary" />
           <meta name="twitter:site" content="@BanditsWedding" />
           <meta name="twitter:creator" content="@qusaiakoud" />
+          <meta name="twitter:image" content={ogImage} />
           <meta property="og:url" content="https://bandits.photography" />
           <meta property="og:title" content="We Are Bandits" />
           <meta
