@@ -37,7 +37,7 @@ const Footer = () => {
         <div className={styles.footer_contact}>
           <a
             className={styles.footer_contact_email}
-            href="mailto:banditsweddingphotography@gmail.com"
+            href="mailto:hello@bandits.photography"
             title="Send us an email"
           >
             Let’s Talk Today
