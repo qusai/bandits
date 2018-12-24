@@ -18,9 +18,12 @@
 
     img {
       cursor: url(../../../static/images/zoom-out.svg) 17.5 17.5, zoom-out;
-      height: 100%;
-      object-fit: contain;
-      object-position: center;
+
+      @include respond-to($mobile, $tablet) {
+        height: 100%;
+        object-fit: contain;
+        object-position: center;
+      }
     }
   }
 }
@@ -37,6 +40,10 @@
     opacity: 0;
     transform-origin: top center;
     transform: scaleY($img-scale);
+  }
+
+  @include respond-to($tablet) {
+    overflow-y: scroll;
   }
 }
 
